@@ -20,6 +20,9 @@ namespace Blobbers.Player
         [SerializeField] float fallSpeed = -15;
         [SerializeField] float fallAcceleraction = 30;
         [SerializeField] float jumpSpeed = 8;
+
+        [Header("Camera")]
+        [SerializeField] GameObject camObj;
         
         CharacterController controller;
         Camera cam;
@@ -30,6 +33,8 @@ namespace Blobbers.Player
 
         void Awake()
         {
+            camObj.SetActive(true);
+
             controller = GetComponent<CharacterController>();
             cam = Camera.main;
         }
